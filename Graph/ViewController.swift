@@ -9,35 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    @IBOutlet weak var graphView: GraphView!
                             
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let x: CGFloat = 10
-        let y: CGFloat = 50
-        let width = self.view.frame.width
-        let height = self.view.frame.height
-        
-        let myData = [
-            ["Mon": 15],
-            ["Tues" : 30],
-            ["Weds" : 7],
-            ["Thurs" : 65],
-            ["Fri" : 30],
-            ["Sat" : 15],
-            ["Sun": 45]
-            ]
-        
-        
-        let graph = GraphView(frame: CGRect(x: x, y: y, width: width-x*2, height: height * 0.5), data: myData)
-        
-        self.view.addSubview(graph)
+
+        graphView.showPoints = false
+        graphView.data = [["Mon": 15], ["Tues" : 30], ["Weds" : 7], ["Thurs" : 65], ["Fri" : 30], ["Sat" : 15], ["Sun": 45]]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-
 }
 
