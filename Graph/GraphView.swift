@@ -39,33 +39,6 @@ class GraphView: UIView {
             self.layoutSubviews()
         }
     }
-
-    var xAxisPoints : [Double] {
-        var points = [Double]()
-        for i in 0..<dataPoints.count {
-            let val = (Double(i)/6.0) * self.frame.width.f
-            points.append(val)
-        }
-        return points
-    }
-
-    var yAxisPoints: [Double] {
-        var points = [Double]()
-        for i in dataPoints {
-            let val = (Double(i)/255) * self.frame.height.f
-            points.append(val)
-        }
-        return points
-    }
-
-    var graphPoints : [CGPoint] {
-        var points = [CGPoint]()
-        for i in 0..<dataPoints.count {
-            let val = CGPoint(x: self.xAxisPoints[i], y: self.yAxisPoints[i])
-            points.append(val)
-        }
-        return points
-    }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
